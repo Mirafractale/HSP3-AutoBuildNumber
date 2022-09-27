@@ -1,0 +1,18 @@
+#ifdef _debug
+
+	sdim buildnumber
+
+    exist "buildnumber.txt"
+
+    if strsize = -1 {
+        bsave "buildnumber.txt", buildnumber
+    }
+
+    bload "buildnumber.txt", buildnumber
+
+    buildnumber = str(int(buildnumber) + 1)
+
+    bsave "buildnumber.txt", buildnumber, strlen(buildnumber)
+    
+#else
+
